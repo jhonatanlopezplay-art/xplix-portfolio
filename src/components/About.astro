@@ -1,0 +1,231 @@
+---
+---
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label mono-font">// 01</span>
+      <h2 class="section-title pixel-font">about_me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <div class="about-img-frame">
+          <img src="/perfil_2.png" alt="Xplix coding" class="about-img" />
+        </div>
+        <div class="about-img-tag mono-font">
+          <span class="blink-dot"></span> coding_mode.exe
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="about-text">
+          Hola, soy <strong class="name-highlight">Xplix</strong> — desarrollador de mods para
+          Minecraft con Fabric y fan del pixel art. Paso las noches frente al monitor creando
+          experiencias jugables y muy divertidas.
+        </p>
+        <p class="about-text">
+          Mi especialidad son los minijuegos: desde minesweeper competitivo hasta juegos de memoria
+          con personalidad.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span class="skill-icon"></span>
+            <div>
+              <p class="skill-name mono-font">Fabric API</p>
+              <p class="skill-sub">Mod development</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"></span>
+            <div>
+              <p class="skill-name mono-font">Minigame Design</p>
+              <p class="skill-sub">Game mechanics</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"></span>
+            <div>
+              <p class="skill-name mono-font">Java</p>
+              <p class="skill-sub">Primary language</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-icon"></span>
+            <div>
+              <p class="skill-name mono-font">Pixel Art</p>
+              <p class="skill-sub">Aesthetic enjoyer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-tags">
+          <span class="about-tag mono-font">squid_craft_fan</span>
+          <span class="about-tag mono-font">lebiu_studio</span>
+          <span class="about-tag mono-font">developer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 6rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 0.85rem;
+    color: var(--cyan);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), transparent);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-image-wrap {
+    position: relative;
+  }
+
+  .about-img-frame {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--border-purple);
+    box-shadow: 6px 6px 0 var(--purple-dim);
+    aspect-ratio: 1;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+
+  .about-img-tag {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .blink-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 0;
+    animation: blink 1s step-end infinite;
+  }
+
+  .about-text {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .name-highlight {
+    color: var(--purple-light);
+    font-weight: 700;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+    image-rendering: pixelated;
+  }
+
+  .skill-item:hover {
+    border-color: var(--border-purple);
+    background: var(--bg-card-hover);
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .skill-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .about-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid var(--purple-dim);
+    color: var(--purple-light);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-img-frame {
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

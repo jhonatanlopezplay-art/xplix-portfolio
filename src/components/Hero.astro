@@ -1,0 +1,274 @@
+---
+---
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="hero-greeting mono-font">hello, world! i'm</p>
+      <h1 class="hero-name pixel-font">
+        <span class="name-x">X</span>plix
+        <span class="cursor">▮</span>
+      </h1>
+      <div class="hero-tags">
+        <span class="tag mono-font">mod_developer</span>
+        <span class="tag mono-font">fabric_wizard</span>
+        <span class="tag mono-font">pixel_enjoyer</span>
+      </div>
+      <p class="hero-desc">
+        Desarrollador de mods para Fabric · Creador de minijuegos·
+        Fan del pixel art y las noches frente al monitor.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary pixel-font">ver proyectos</a>
+        <a href="#contact" class="btn-ghost mono-font">// contacto</a>
+      </div>
+    </div>
+
+    <div class="hero-avatar">
+      <div class="avatar-frame animate-float">
+        <img src="/perfil.png" alt="Xplix avatar" class="avatar-img" />
+        <div class="avatar-scan"></div>
+      </div>
+      <div class="avatar-decoration">
+        <span class="deco-code mono-font">&lt;/&gt;</span>
+        <span class="deco-plus pixel-font">+</span>
+        <span class="deco-bracket mono-font">{}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-hint mono-font">scroll_down ↓</div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 4rem;
+    position: relative;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-greeting {
+    font-size: 0.9rem;
+    color: var(--cyan);
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: pixel-in 0.5s ease 0.2s forwards;
+  }
+
+  .hero-name {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: pixel-in 0.5s ease 0.4s forwards;
+  }
+
+  .name-x {
+    color: var(--purple-light);
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  }
+
+  .cursor {
+    color: var(--purple);
+    animation: blink 1s step-end infinite;
+    font-size: 0.8em;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: pixel-in 0.5s ease 0.6s forwards;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-purple);
+    color: var(--purple-light);
+    image-rendering: pixelated;
+  }
+
+  .hero-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 480px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: pixel-in 0.5s ease 0.8s forwards;
+    line-height: 1.8;
+  }
+
+  .highlight {
+    color: var(--purple-light);
+    font-weight: 700;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: pixel-in 0.5s ease 1s forwards;
+  }
+
+  .btn-primary {
+    font-size: 0.6rem;
+    padding: 14px 24px;
+    background: var(--purple);
+    color: white;
+    border: 2px solid var(--purple-light);
+    image-rendering: pixelated;
+    transition: all 0.15s;
+    letter-spacing: 1px;
+  }
+
+  .btn-primary:hover {
+    background: var(--purple-light);
+    color: var(--bg);
+    box-shadow: 4px 4px 0 var(--purple-dim);
+    transform: translate(-2px, -2px);
+  }
+
+  .btn-ghost {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    color: var(--cyan);
+  }
+
+  /* Avatar */
+  .hero-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    animation: pixel-in 0.6s ease 0.5s forwards;
+  }
+
+  .avatar-frame {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--purple);
+    box-shadow:
+      0 0 0 6px rgba(139, 92, 246, 0.1),
+      0 0 40px rgba(139, 92, 246, 0.3);
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+
+  .avatar-scan {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(139, 92, 246, 0.08) 50%,
+      transparent 100%
+    );
+    animation: scanline 3s linear infinite;
+  }
+
+  .avatar-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .deco-code, .deco-plus, .deco-bracket {
+    position: absolute;
+    color: var(--purple);
+    font-size: 1.5rem;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .deco-code {
+    top: 10%;
+    left: -5%;
+    animation-delay: 0s;
+  }
+
+  .deco-plus {
+    top: 5%;
+    right: 10%;
+    font-size: 1rem;
+    animation-delay: 1s;
+  }
+
+  .deco-bracket {
+    bottom: 15%;
+    right: -5%;
+    animation-delay: 2s;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    letter-spacing: 2px;
+    animation: blink 2s step-end infinite;
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-avatar {
+      order: -1;
+    }
+
+    .avatar-frame {
+      width: 200px;
+      height: 200px;
+    }
+
+    .hero-tags {
+      justify-content: center;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .hero-desc {
+      margin: 0 auto 2rem;
+    }
+  }
+</style>
