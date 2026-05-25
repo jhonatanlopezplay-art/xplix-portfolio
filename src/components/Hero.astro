@@ -2,42 +2,50 @@
 ---
 
 <section class="hero" id="home">
-  <div class="container hero-inner">
+  <div class="hero-inner container">
+
     <div class="hero-text">
-      <p class="hero-greeting mono-font">hello, world! i'm</p>
-      <h1 class="hero-name pixel-font">
-        <span class="name-x">X</span>plix
-        <span class="cursor">▮</span>
-      </h1>
-      <div class="hero-tags">
-        <span class="tag mono-font">mod_developer</span>
-        <span class="tag mono-font">fabric_wizard</span>
-        <span class="tag mono-font">pixel_enjoyer</span>
+      <div class="hero-chip lg mono-font">
+        <span class="chip-dot"></span>
+        available for collabs
       </div>
-      <p class="hero-desc">
-        Desarrollador de mods para Fabric · Creador de minijuegos·
-        Fan del pixel art y las noches frente al monitor.
+
+      <h1 class="hero-name pixel-font">
+        <span class="x">X</span>plix<span class="cursor">▮</span>
+      </h1>
+
+      <div class="hero-tags">
+        <span class="hero-tag lg mono-font">mod_developer</span>
+        <span class="hero-tag lg mono-font">fabric_wizard</span>
+        <span class="hero-tag lg mono-font">pixel_enjoyer</span>
+        <span class="hero-tag lg mono-font">minigame_creator</span>
+      </div>
+
+      <p class="hero-sub">
+        Desarrollador de mods para <strong>Fabric</strong> · Creador de minijuegos<br />
+        Fan del <strong>pixel art</strong> y las noches frente al monitor.
       </p>
+
       <div class="hero-cta">
-        <a href="#projects" class="btn-primary pixel-font">ver proyectos</a>
-        <a href="#contact" class="btn-ghost mono-font">// contacto</a>
+        <a href="#projects" class="btn-primary lg pixel-font">ver proyectos</a>
+        <a href="#contact" class="btn-ghost mono-font">// contacto →</a>
       </div>
     </div>
 
     <div class="hero-avatar">
-      <div class="avatar-frame animate-float">
-        <img src="/perfil.png" alt="Xplix avatar" class="avatar-img" />
-        <div class="avatar-scan"></div>
-      </div>
-      <div class="avatar-decoration">
-        <span class="deco-code mono-font">&lt;/&gt;</span>
-        <span class="deco-plus pixel-font">+</span>
-        <span class="deco-bracket mono-font">{}</span>
+      <div class="avatar-container">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring-2"></div>
+        <div class="avatar-img-wrap">
+          <img src="/perfil.png" alt="Xplix avatar" class="avatar-img" />
+        </div>
+        <div class="avatar-float-tag tag-1 lg mono-font">🧩 fabric_wizard</div>
+        <div class="avatar-float-tag tag-2 lg mono-font">☕ java_dev</div>
+        <div class="avatar-float-tag tag-3 lg mono-font">🎮 minigames</div>
       </div>
     </div>
-  </div>
 
-  <!-- Scroll indicator -->
+  </div>
   <div class="scroll-hint mono-font">scroll_down ↓</div>
 </section>
 
@@ -47,228 +55,195 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 0 4rem;
+    padding: 100px 0 5rem;
     position: relative;
+    z-index: 1;
   }
 
   .hero-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 420px;
     gap: 4rem;
     align-items: center;
   }
 
-  .hero-greeting {
-    font-size: 0.9rem;
-    color: var(--cyan);
-    margin-bottom: 0.5rem;
+  /* chip */
+  .hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    margin-bottom: 2rem;
+    font-size: 0.7rem;
+    color: var(--cyan2);
+    letter-spacing: 1px;
     opacity: 0;
-    animation: pixel-in 0.5s ease 0.2s forwards;
+    animation: slideIn 0.6s ease 0.2s forwards;
+  }
+  .chip-dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    display: block;
+    animation: blink 1.5s step-end infinite;
+    box-shadow: 0 0 8px var(--green);
   }
 
+  /* name */
   .hero-name {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.2;
-    color: var(--text);
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    line-height: 1.4;
+    color: var(--white);
     margin-bottom: 1.5rem;
     opacity: 0;
-    animation: pixel-in 0.5s ease 0.4s forwards;
+    animation: slideIn 0.6s ease 0.4s forwards;
+    text-shadow: 0 0 40px rgba(125, 211, 252, 0.5), 0 0 80px rgba(14, 165, 233, 0.25);
   }
-
-  .name-x {
-    color: var(--purple-light);
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  .x {
+    color: var(--cyan);
+    text-shadow: 0 0 30px rgba(34, 211, 238, 0.9), 0 0 60px rgba(34, 211, 238, 0.4);
   }
-
   .cursor {
-    color: var(--purple);
+    font-size: 0.6em;
+    color: var(--blue2);
     animation: blink 1s step-end infinite;
-    font-size: 0.8em;
   }
 
+  /* tags */
   .hero-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
     opacity: 0;
-    animation: pixel-in 0.5s ease 0.6s forwards;
+    animation: slideIn 0.6s ease 0.8s forwards;
+  }
+  .hero-tag {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+    color: var(--cyan2);
+    letter-spacing: 0.5px;
   }
 
-  .tag {
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-purple);
-    color: var(--purple-light);
-    image-rendering: pixelated;
-  }
-
-  .hero-desc {
-    color: var(--text-muted);
-    font-size: 1rem;
-    max-width: 480px;
-    margin-bottom: 2rem;
+  /* sub */
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(224, 242, 254, 0.7);
+    line-height: 1.9;
+    max-width: 540px;
+    margin-bottom: 2.5rem;
     opacity: 0;
-    animation: pixel-in 0.5s ease 0.8s forwards;
-    line-height: 1.8;
+    animation: slideIn 0.6s ease 0.6s forwards;
   }
+  .hero-sub strong { color: var(--cyan2); font-weight: 700; }
 
-  .highlight {
-    color: var(--purple-light);
-    font-weight: 700;
-  }
-
+  /* cta */
   .hero-cta {
     display: flex;
     gap: 1.5rem;
     align-items: center;
     flex-wrap: wrap;
     opacity: 0;
-    animation: pixel-in 0.5s ease 1s forwards;
+    animation: slideIn 0.6s ease 1s forwards;
   }
-
   .btn-primary {
-    font-size: 0.6rem;
-    padding: 14px 24px;
-    background: var(--purple);
+    font-size: 0.55rem;
+    padding: 16px 28px;
+    color: var(--white);
+    border: 1.5px solid rgba(103, 232, 249, 0.5);
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 10px rgba(103, 232, 249, 0.5);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.4), 6px 6px 0 rgba(14, 165, 233, 0.15);
+    transform: translate(-3px, -3px);
     color: white;
-    border: 2px solid var(--purple-light);
-    image-rendering: pixelated;
-    transition: all 0.15s;
+    border-color: var(--cyan2);
+  }
+  .btn-ghost {
+    font-size: 0.85rem;
+    color: rgba(224, 242, 254, 0.55);
+    transition: color 0.2s, text-shadow 0.2s;
     letter-spacing: 1px;
   }
-
-  .btn-primary:hover {
-    background: var(--purple-light);
-    color: var(--bg);
-    box-shadow: 4px 4px 0 var(--purple-dim);
-    transform: translate(-2px, -2px);
-  }
-
-  .btn-ghost {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    transition: color 0.2s;
-  }
-
   .btn-ghost:hover {
-    color: var(--cyan);
+    color: var(--cyan2);
+    text-shadow: 0 0 10px rgba(103, 232, 249, 0.6);
   }
 
-  /* Avatar */
+  /* avatar */
   .hero-avatar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     position: relative;
     opacity: 0;
-    animation: pixel-in 0.6s ease 0.5s forwards;
+    animation: slideIn 0.8s ease 0.5s forwards;
   }
+  .avatar-container { position: relative; width: 340px; height: 340px; }
 
-  .avatar-frame {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid var(--purple);
+  .avatar-ring {
+    position: absolute; inset: 0; border-radius: 50%;
+    border: 1.5px solid rgba(14, 165, 233, 0.35);
+    animation: rotate-ring 12s linear infinite;
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+  }
+  .avatar-ring::before {
+    content: '';
+    position: absolute; top: -5px; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 10px; background: var(--cyan2); border-radius: 50%;
+    box-shadow: 0 0 16px var(--cyan2), 0 0 32px var(--cyan);
+  }
+  .avatar-ring-2 {
+    position: absolute; inset: 18px; border-radius: 50%;
+    border: 1px dashed rgba(14, 165, 233, 0.18);
+    animation: rotate-ring 22s linear infinite reverse;
+  }
+  .avatar-img-wrap {
+    position: absolute; inset: 34px; border-radius: 50%; overflow: hidden;
+    border: 2.5px solid rgba(56, 189, 248, 0.7);
     box-shadow:
-      0 0 0 6px rgba(139, 92, 246, 0.1),
-      0 0 40px rgba(139, 92, 246, 0.3);
+      0 0 60px rgba(14, 165, 233, 0.7),
+      0 0 120px rgba(14, 165, 233, 0.25),
+      inset 0 0 30px rgba(14, 165, 233, 0.15);
   }
-
   .avatar-img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     image-rendering: pixelated;
   }
 
-  .avatar-scan {
+  .avatar-float-tag {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(139, 92, 246, 0.08) 50%,
-      transparent 100%
-    );
-    animation: scanline 3s linear infinite;
+    font-size: 0.68rem;
+    padding: 7px 13px;
+    color: var(--cyan2);
+    white-space: nowrap;
   }
+  .tag-1 { top: 20px; right: -40px; animation: float 4s ease infinite; }
+  .tag-2 { bottom: 40px; left: -50px; animation: float 4s ease 2s infinite; }
+  .tag-3 { top: 50%; right: -60px; animation: float 4s ease 1s infinite; }
 
-  .avatar-decoration {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-
-  .deco-code, .deco-plus, .deco-bracket {
-    position: absolute;
-    color: var(--purple);
-    font-size: 1.5rem;
-    opacity: 0.6;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .deco-code {
-    top: 10%;
-    left: -5%;
-    animation-delay: 0s;
-  }
-
-  .deco-plus {
-    top: 5%;
-    right: 10%;
-    font-size: 1rem;
-    animation-delay: 1s;
-  }
-
-  .deco-bracket {
-    bottom: 15%;
-    right: -5%;
-    animation-delay: 2s;
-  }
-
+  /* scroll hint */
   .scroll-hint {
     position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    opacity: 0.5;
+    bottom: 2rem; left: 50%; transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: rgba(224, 242, 254, 0.4);
     letter-spacing: 2px;
-    animation: blink 2s step-end infinite;
+    animation: blink 2.5s step-end infinite;
   }
 
-  @media (max-width: 768px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .hero-avatar {
-      order: -1;
-    }
-
-    .avatar-frame {
-      width: 200px;
-      height: 200px;
-    }
-
-    .hero-tags {
-      justify-content: center;
-    }
-
-    .hero-cta {
-      justify-content: center;
-    }
-
-    .hero-desc {
-      margin: 0 auto 2rem;
-    }
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-avatar { order: -1; }
+  }
+  @media (max-width: 600px) {
+    .hero-name { font-size: 1.8rem; }
+    .avatar-container { width: 260px; height: 260px; }
+    .avatar-float-tag { display: none; }
   }
 </style>
