@@ -1,231 +1,186 @@
 ---
 ---
 
-<section class="about" id="about">
+<section class="section-glass" id="about">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label mono-font">// 01</span>
-      <h2 class="section-title pixel-font">about_me</h2>
-    </div>
+    <div class="section-glass-inner lg-card reveal">
 
-    <div class="about-grid">
-      <div class="about-image-wrap">
-        <div class="about-img-frame">
-          <img src="/perfil_2.png" alt="Xplix coding" class="about-img" />
-        </div>
-        <div class="about-img-tag mono-font">
-          <span class="blink-dot"></span> coding_mode.exe
-        </div>
+      <div class="reveal">
+        <p class="section-badge mono-font">01 / about_me</p>
+        <h2 class="section-title pixel-font">quien_soy</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <div class="about-content">
-        <p class="about-text">
-          Hola, soy <strong class="name-highlight">Xplix</strong> — desarrollador de mods para
-          Minecraft con Fabric y fan del pixel art. Paso las noches frente al monitor creando
-          experiencias jugables y muy divertidas.
-        </p>
-        <p class="about-text">
-          Mi especialidad son los minijuegos: desde minesweeper competitivo hasta juegos de memoria
-          con personalidad.
-        </p>
+      <div class="about-grid">
+        <!-- imagen -->
+        <div class="reveal">
+          <div class="about-img-frame">
+            <div class="about-corner tl"></div>
+            <div class="about-corner tr"></div>
+            <div class="about-corner bl"></div>
+            <div class="about-corner br"></div>
+            <div class="about-img-inner lg-card">
+              <img src="/perfil_2.png" alt="Xplix coding" />
+              <div class="about-img-overlay"></div>
+              <div class="about-img-label lg mono-font">coding_mode.exe — activo</div>
+            </div>
+          </div>
+        </div>
 
-        <div class="skills-grid">
-          <div class="skill-item">
-            <span class="skill-icon"></span>
-            <div>
+        <!-- texto -->
+        <div class="reveal">
+          <p class="about-text">
+            Hola, soy <strong>Xplix</strong> — desarrollador de mods para Minecraft con Fabric
+            y fan del pixel art. Paso las noches frente al monitor creando experiencias jugables
+            y muy divertidas.
+          </p>
+          <p class="about-text">
+            Mi especialidad son los <strong>minijuegos</strong>: desde buscaminas competitivo
+            hasta juegos de memoria con personalidad propia. Cada mod que creo busca algo distinto:
+            adrenalina, risa, o un buen reto.
+          </p>
+
+          <div class="skills-grid">
+            <div class="skill-card lg-card reveal">
               <p class="skill-name mono-font">Fabric API</p>
               <p class="skill-sub">Mod development</p>
             </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-icon"></span>
-            <div>
+            <div class="skill-card lg-card reveal">
               <p class="skill-name mono-font">Minigame Design</p>
               <p class="skill-sub">Game mechanics</p>
             </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-icon"></span>
-            <div>
+            <div class="skill-card lg-card reveal">
               <p class="skill-name mono-font">Java</p>
               <p class="skill-sub">Primary language</p>
             </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-icon"></span>
-            <div>
+            <div class="skill-card lg-card reveal">
               <p class="skill-name mono-font">Pixel Art</p>
               <p class="skill-sub">Aesthetic enjoyer</p>
             </div>
           </div>
-        </div>
 
-        <div class="about-tags">
-          <span class="about-tag mono-font">squid_craft_fan</span>
-          <span class="about-tag mono-font">lebiu_studio</span>
-          <span class="about-tag mono-font">developer</span>
+          <div class="about-badges">
+            <span class="about-badge lg mono-font">squid_craft_fan</span>
+            <span class="about-badge lg mono-font">lebiu_studio</span>
+            <span class="about-badge lg mono-font">eufonia_inspired</span>
+            <span class="about-badge lg mono-font">open_to_collabs</span>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <style>
-  .about {
+  .section-glass {
     padding: 6rem 0;
-  }
-
-  .section-header {
-    margin-bottom: 3rem;
-  }
-
-  .section-label {
-    font-size: 0.85rem;
-    color: var(--cyan);
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--text);
     position: relative;
-    display: inline-block;
+    z-index: 1;
   }
 
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--purple), transparent);
+  .section-glass-inner {
+    padding: 3.5rem 3rem;
   }
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: 360px 1fr;
+    gap: 5rem;
     align-items: start;
   }
 
-  .about-image-wrap {
-    position: relative;
-  }
+  /* image frame */
+  .about-img-frame { position: relative; }
 
-  .about-img-frame {
-    border-radius: 50%;
+  .about-img-inner {
     overflow: hidden;
-    border: 3px solid var(--border-purple);
-    box-shadow: 6px 6px 0 var(--purple-dim);
     aspect-ratio: 1;
+    position: relative;
+    box-shadow: 10px 10px 0 rgba(14, 165, 233, 0.18), 0 0 50px rgba(14, 165, 233, 0.15);
   }
-
-  .about-img {
-    width: 100%;
-    height: 100%;
+  .about-img-inner img {
+    width: 100%; height: 100%;
     object-fit: cover;
     image-rendering: pixelated;
+    display: block;
   }
-
-  .about-img-tag {
-    margin-top: 1rem;
-    font-size: 0.75rem;
+  .about-img-overlay {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 3px,
+      rgba(14, 165, 233, 0.04) 3px, rgba(14, 165, 233, 0.04) 4px
+    );
+    pointer-events: none;
+  }
+  .about-img-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    font-size: 0.7rem;
     color: var(--green);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
+    padding: 10px 16px;
+    display: flex; align-items: center; gap: 8px;
+    text-shadow: 0 0 8px var(--green);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .about-img-label::before {
+    content: '●';
+    color: var(--green);
+    animation: blink 1.5s step-end infinite;
   }
 
-  .blink-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--green);
-    border-radius: 0;
-    animation: blink 1s step-end infinite;
+  /* corners */
+  .about-corner {
+    position: absolute; width: 16px; height: 16px;
+    border-color: rgba(56, 189, 248, 0.8); border-style: solid;
   }
+  .tl { top: -8px; left: -8px; border-width: 2px 0 0 2px; }
+  .tr { top: -8px; right: -8px; border-width: 2px 2px 0 0; }
+  .bl { bottom: -8px; left: -8px; border-width: 0 0 2px 2px; }
+  .br { bottom: -8px; right: -8px; border-width: 0 2px 2px 0; }
 
+  /* text */
   .about-text {
-    color: var(--text-muted);
+    color: rgba(224, 242, 254, 0.75);
+    font-size: 0.98rem;
+    line-height: 1.9;
     margin-bottom: 1.2rem;
-    line-height: 1.8;
   }
+  .about-text strong { color: var(--cyan2); }
 
-  .name-highlight {
-    color: var(--purple-light);
-    font-weight: 700;
-  }
-
+  /* skills */
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
     margin: 2rem 0;
   }
+  .skill-card {
+    padding: 1rem 1.2rem;
+    border-left: 2px solid rgba(14, 165, 233, 0.5);
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .skill-card:hover {
+    border-left-color: var(--cyan2);
+    transform: translateX(4px);
+  }
+  .skill-name { font-size: 0.8rem; color: var(--white); margin-bottom: 3px; }
+  .skill-sub  { font-size: 0.75rem; color: var(--muted); }
 
-  .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    transition: border-color 0.2s, background 0.2s;
-    image-rendering: pixelated;
+  /* badges */
+  .about-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .about-badge {
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    color: var(--cyan2);
+    letter-spacing: 0.5px;
   }
 
-  .skill-item:hover {
-    border-color: var(--border-purple);
-    background: var(--bg-card-hover);
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .section-glass-inner { padding: 2rem 1.5rem; }
   }
-
-  .skill-icon {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .skill-name {
-    font-size: 0.8rem;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
-
-  .skill-sub {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-
-  .about-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .about-tag {
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid var(--purple-dim);
-    color: var(--purple-light);
-  }
-
-  @media (max-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .about-img-frame {
-      max-width: 220px;
-      margin: 0 auto;
-    }
-
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr; }
   }
 </style>
