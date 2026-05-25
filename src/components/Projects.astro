@@ -4,374 +4,221 @@ const mods = [
     id: "minesweeper",
     name: "Buscaminas",
     type: "Fabric Mod",
-    desc: "Minijuego de buscaminas aca es donde la memoria juega un papel muy importante para que no quedes eliminado. Inspirado en la temática de Squid Craft Games 4, competitivo.",
-    tags: ["fabric", "minigame"],
-    icon: "",
-    color: "#ef4444",
+    desc: "Minijuego de buscaminas donde la memoria juega un papel clave para no quedar eliminado. Inspirado en Squid Craft Games 4, totalmente competitivo.",
+    tags: ["fabric", "minigame", "competitive"],
+    icon: "💣",
+    color: "#67e8f9",
     status: "released",
   },
   {
     id: "agrupados",
     name: "Agrupados",
     type: "Fabric Mod",
-    desc: "Minijuego de grupos y equipos donde los jugadores deben agruparse antes que todas las salas se agoten, este minijuego es muy estresante sobre todo al momento de juagarlo.",
-    tags: ["fabric", "minigame", "teams"],
-    icon: "",
-    color: "#f59e0b",
+    desc: "Minijuego de grupos donde los jugadores deben agruparse antes que las salas se agoten. Muy estresante, especialmente al momento de jugarlo en vivo.",
+    tags: ["fabric", "teams", "stress"],
+    icon: "👥",
+    color: "#fbbf24",
     status: "released",
   },
   {
     id: "periquito",
     name: "Periquito",
     type: "Fabric Mod",
-    desc: "EL famosisimo juego del periquito lo increible de este juego es la memoria que la hace un poco tedioso. Inspirado en los eventos de Eufonia Studio.",
-    tags: ["fabric", "memory", "minigame"],
-    icon: "",
-    color: "#10b981",
+    desc: "El famoso juego del periquito — la memoria lo hace tedioso de la mejor forma. Inspirado en los eventos de Eufonia Studio.",
+    tags: ["fabric", "memory", "eufonia"],
+    icon: "🦜",
+    color: "#34d399",
     status: "released",
   },
   {
     id: "galleta",
     name: "Galleta",
     type: "Fabric Mod",
-    desc: "Un minijuego que obviamente debe de estar este fue mi segundo proyecto y fue en donde avanze mucho como desarrollador de mods.",
-    tags: ["fabric", "chaos", "challenge"],
-    icon: "",
+    desc: "Un clásico que tenía que estar. Fue mi segundo proyecto y donde más avancé como desarrollador de mods — cada línea fue una lección.",
+    tags: ["fabric", "classic", "challenge"],
+    icon: "🍪",
     color: "#a78bfa",
     status: "released",
   },
 ];
 
 const launcher = {
-  id: "Cliente",
-  name: "Lebiu CLient",
+  id: "lebiu-client",
+  name: "Lebiu Client",
   type: "Cliente de Minecraft",
-  desc: "Un cliente para nuestra comunidad este cliente de minecraft trae acceso a nuestro eventos.",
-  tags: ["launcher", "java", "desktop"],
+  desc: "Un cliente para nuestra comunidad con acceso a eventos exclusivos. Diseñado para que la experiencia de juego sea única desde el primer inicio.",
+  tags: ["launcher", "java", "desktop", "community"],
   icon: "🐨",
-  color: "#06b6d4",
   status: "wip",
 };
 ---
 
-<section class="projects" id="projects">
+<section id="projects" class="projects-section">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label mono-font">// 02</span>
-      <h2 class="section-title pixel-font">projects</h2>
+
+    <div class="reveal">
+      <p class="section-badge mono-font">02 / projects</p>
+      <h2 class="section-title pixel-font">mis_mods</h2>
+      <div class="section-divider"></div>
     </div>
 
-    <!-- Mods label -->
-    <div class="sub-section-label">
-      <span class="mono-font sub-label">fabric_mods/</span>
+    <div class="project-sub-label reveal">
+      <span class="mono-font">fabric_mods/</span>
       <span class="sub-desc mono-font">— Squid Craft Games 4 inspired</span>
     </div>
 
     <div class="mods-grid">
       {mods.map((mod) => (
-        <div class="mod-card" data-color={mod.color}>
-          <div class="card-top">
-            <span class="mod-icon" style={`color: ${mod.color}`}>{mod.icon}</span>
-            <span class={`mod-status ${mod.status === 'released' ? 'status-done' : 'status-wip'} mono-font`}>
+        <div class="mod-card lg-card reveal" style={`--card-color: ${mod.color}`}>
+          <div class="card-top-line"></div>
+          <div class="card-header">
+            <span class="card-icon">{mod.icon}</span>
+            <span class={`card-status mono-font ${mod.status === 'released' ? 'status-live' : 'status-wip'}`}>
               {mod.status === 'released' ? '● LIVE' : '◌ WIP'}
             </span>
           </div>
-          <p class="mod-type mono-font">{mod.type}</p>
-          <h3 class="mod-name pixel-font">{mod.name}</h3>
-          <p class="mod-desc">{mod.desc}</p>
-          <div class="mod-tags">
+          <p class="card-type mono-font">{mod.type}</p>
+          <h3 class="card-name pixel-font">{mod.name}</h3>
+          <p class="card-desc">{mod.desc}</p>
+          <div class="card-tags">
             {mod.tags.map(tag => (
-              <span class="mod-tag mono-font">#{tag}</span>
+              <span class="card-tag mono-font">#{tag}</span>
             ))}
           </div>
-          <div class="card-border-bottom" style={`background: ${mod.color}`}></div>
         </div>
       ))}
     </div>
 
     <!-- Launcher -->
-    <div class="sub-section-label" style="margin-top: 3rem;">
-      <span class="mono-font sub-label">launcher/</span>
-      <span class="sub-desc mono-font">— in development</span>
-    </div>
-
-    <div class="launcher-card">
-      <div class="launcher-left">
-        <div class="launcher-icon-wrap">
-          <span class="launcher-icon">{launcher.icon}</span>
+    <div class="launcher-card lg-card reveal">
+      <div class="launcher-inner">
+        <div class="launcher-icon-wrap lg-card">
+          <span>{launcher.icon}</span>
         </div>
-        <div>
-          <p class="mod-type mono-font">{launcher.type}</p>
-          <h3 class="mod-name pixel-font">{launcher.name}</h3>
+        <div style="flex: 1">
+          <p class="launcher-type mono-font">{launcher.type.toUpperCase()}</p>
+          <h3 class="launcher-name pixel-font">{launcher.name}</h3>
+          <p class="launcher-desc">{launcher.desc}</p>
+          <div class="launcher-tags">
+            {launcher.tags.map(tag => (
+              <span class="launcher-tag lg mono-font">#{tag}</span>
+            ))}
+          </div>
         </div>
-      </div>
-      <p class="launcher-desc">{launcher.desc}</p>
-      <div class="launcher-meta">
-        <div class="mod-tags">
-          {launcher.tags.map(tag => (
-            <span class="mod-tag mono-font">#{tag}</span>
-          ))}
-        </div>
-        <span class="status-wip mono-font">◌ EN DESARROLLO</span>
       </div>
     </div>
 
-    <!-- More coming -->
-    <div class="more-soon">
-      <p class="more-text mono-font">
-        <span class="blink-cursor">▮</span> más proyectos en camino...
-      </p>
+    <div class="more-soon lg-card reveal">
+      <span class="more-cursor">▮</span>
+      <span class="mono-font"> más proyectos en camino...</span>
     </div>
+
   </div>
 </section>
 
 <style>
-  .projects {
-    padding: 6rem 0;
-  }
+  .projects-section { padding: 6rem 0; position: relative; z-index: 1; }
 
-  .section-label {
-    font-size: 0.85rem;
-    color: var(--cyan);
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--text);
-    margin-bottom: 0;
-    position: relative;
-    display: inline-block;
-  }
-
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--purple), transparent);
-  }
-
-  .section-header {
-    margin-bottom: 3rem;
-  }
-
-  .sub-section-label {
+  .project-sub-label {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 1px;
   }
-
-  .sub-label {
-    font-size: 0.9rem;
-    color: var(--cyan);
+  .project-sub-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    max-width: 200px;
   }
+  .sub-desc { color: var(--muted); margin-left: 4px; }
 
-  .sub-desc {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
-
+  /* grid */
   .mods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
     margin-bottom: 1rem;
   }
 
+  /* card */
   .mod-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    padding: 1.75rem;
     cursor: default;
+    transition: transform 0.25s, box-shadow 0.25s;
   }
+  .mod-card:hover { transform: translateY(-6px); }
 
-  .mod-card:hover {
-    border-color: var(--border-purple);
-    background: var(--bg-card-hover);
-    transform: translateY(-3px);
+  .card-top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--card-color, var(--cyan));
+    opacity: 0; transition: opacity 0.2s;
+    box-shadow: 0 0 16px var(--card-color, var(--cyan));
   }
+  .mod-card:hover .card-top-line { opacity: 1; }
 
-  .card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+  .card-icon { font-size: 2rem; line-height: 1; }
 
-  .mod-icon {
-    font-size: 1.8rem;
-  }
-
-  .mod-status {
-    font-size: 0.6rem;
-    padding: 3px 8px;
-  }
-
-  .status-done {
+  .card-status { font-size: 0.6rem; padding: 3px 8px; letter-spacing: 1px; }
+  .status-live {
     color: var(--green);
-    border: 1px solid var(--green);
-    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    background: rgba(52, 211, 153, 0.08);
+    text-shadow: 0 0 8px var(--green);
   }
-
   .status-wip {
     color: var(--amber);
-    border: 1px solid var(--amber);
-    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    background: rgba(251, 191, 36, 0.08);
   }
 
-  .mod-type {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-bottom: 0.4rem;
-  }
+  .card-type { font-size: 0.65rem; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 1px; }
+  .card-name { font-size: 0.75rem; color: var(--white); margin-bottom: 1rem; line-height: 1.6; }
+  .card-desc { font-size: 0.87rem; color: rgba(224, 242, 254, 0.65); line-height: 1.7; margin-bottom: 1.25rem; }
 
-  .mod-name {
-    font-size: 0.85rem;
-    color: var(--text);
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-  }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .card-tag { font-size: 0.6rem; color: var(--muted2); padding: 2px 8px; }
 
-  .mod-desc {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  .mod-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .mod-tag {
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 2px 8px;
-  }
-
-  .card-border-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .mod-card:hover .card-border-bottom {
-    opacity: 1;
-  }
-
-  /* Launcher card */
-  .launcher-card {
-    background: var(--bg-card);
-    border: 1px solid var(--cyan-dim);
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    gap: 1rem 2rem;
-    align-items: start;
-    transition: border-color 0.2s, background 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
+  /* launcher */
+  .launcher-card { padding: 2.5rem; margin-top: 2rem; position: relative; overflow: hidden; }
   .launcher-card::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, var(--cyan), transparent);
+    box-shadow: 0 0 20px var(--cyan);
   }
-
-  .launcher-card:hover {
-    border-color: var(--cyan);
-    background: var(--bg-card-hover);
+  .launcher-card::after {
+    content: 'WIP';
+    position: absolute; top: 1rem; right: 1rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    color: var(--amber);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    padding: 3px 8px;
+    background: rgba(251, 191, 36, 0.08);
   }
-
-  .launcher-left {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
+  .launcher-inner { display: flex; gap: 2.5rem; align-items: flex-start; }
   .launcher-icon-wrap {
-    width: 60px;
-    height: 60px;
-    background: rgba(6, 182, 212, 0.1);
-    border: 2px solid var(--cyan-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 80px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem; flex-shrink: 0;
   }
+  .launcher-name { font-size: 0.8rem; color: var(--white); margin-bottom: 0.5rem; line-height: 1.6; }
+  .launcher-type { font-size: 0.65rem; color: var(--cyan); margin-bottom: 1rem; letter-spacing: 1px; }
+  .launcher-desc { font-size: 0.9rem; color: rgba(224, 242, 254, 0.65); line-height: 1.8; margin-bottom: 1.5rem; }
+  .launcher-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .launcher-tag { font-size: 0.6rem; color: var(--cyan2); padding: 2px 8px; }
 
-  .launcher-icon {
-    font-size: 2rem;
-  }
+  /* more */
+  .more-soon { margin-top: 3rem; padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); }
+  .more-cursor { color: var(--cyan2); animation: blink 1s step-end infinite; text-shadow: 0 0 8px var(--cyan); }
 
-  .launcher-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .launcher-meta {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .more-soon {
-    margin-top: 3rem;
-    text-align: center;
-    padding: 2rem;
-    border: 1px dashed var(--border);
-  }
-
-  .more-text {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
-
-  .blink-cursor {
-    color: var(--purple);
-    animation: blink 1s step-end infinite;
-  }
-
-  @media (max-width: 768px) {
-    .launcher-card {
-      grid-template-columns: 1fr;
-    }
-
-    .launcher-desc {
-      grid-column: 1;
-      grid-row: 2;
-    }
-
-    .launcher-meta {
-      grid-column: 1;
-    }
+  @media (max-width: 900px) {
+    .launcher-inner { flex-direction: column; }
   }
 </style>
