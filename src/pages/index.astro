@@ -5,9 +5,13 @@ import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Xplix | Dev Portfolio" description="Mod developer & pixel art enjoyer">
+<BaseLayout
+  title="Xplix | Mod Developer"
+  description="Mod developer & pixel art enjoyer — Fabric mods, minijuegos y más."
+>
   <Nav />
   <main>
     <Hero />
@@ -15,4 +19,5 @@ import Contact from '../components/Contact.astro';
     <Projects />
     <Contact />
   </main>
+  <Footer />
 </BaseLayout>
