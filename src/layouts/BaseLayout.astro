@@ -6,7 +6,10 @@ interface Props {
   description?: string;
 }
 
-const { title = 'Xplix | Dev Portfolio', description = 'Mod developer & programmer' } = Astro.props;
+const {
+  title = 'Xplix | Mod Developer',
+  description = 'Mod developer & pixel art enjoyer — Fabric mods, minigames y más.'
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,6 +22,29 @@ const { title = 'Xplix | Dev Portfolio', description = 'Mod developer & programm
     <title>{title}</title>
   </head>
   <body>
+    <div class="scanlines"></div>
     <slot />
+
+    <script>
+      // Scroll reveal
+      const io = new IntersectionObserver(entries => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 80);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          document.querySelector((a as HTMLAnchorElement).getAttribute('href')!)
+            ?.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    </script>
   </body>
 </html>
